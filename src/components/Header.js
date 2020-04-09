@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './style.css'
 
 const Header = (props) => {
@@ -7,9 +8,15 @@ const Header = (props) => {
       <h1>ANDREW'S MUSIC EMPORIUM</h1>
       <nav className="nav-list">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Albums</li>
+          <Link to='/'>
+            <li>Home</li>
+          </Link>
+          <Link to='/about'>
+            <li>About</li>
+          </Link>
+          <Link to='/albums'>
+            <li>Albums</li>
+          </Link>
         </ul>
       </nav>
     </header>

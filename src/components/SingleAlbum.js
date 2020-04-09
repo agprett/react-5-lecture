@@ -11,7 +11,20 @@ class SingleAlbum extends Component {
   }
 
   componentDidMount() {
-    //Derive album here
+    const album = albums.find(element => element.id === +this.props.match.params.id)
+    this.setState({album: album})
+  }
+  
+  componentDidUpdate(prevProps) {
+    if(prevProps.match.params.id !==this.props.match.params.id){
+      const album = albums.find(element => element.id === +this.props.match.params.id)
+      this.setState({album: album})
+    }
+  }
+
+  handleBuyAlbum = () => {
+    alert('YOU BOUGHT IT DUDE')
+    this.props.history.push('/albums')
   }
 
   render() {
@@ -25,7 +38,7 @@ class SingleAlbum extends Component {
           alt={this.state.album.title}
           className="large-album-art"
         />
-        <button onClick={() => alert('YOU BOUGHT IT')} className="buy-button">
+        <button onClick={() => this.handleBuyAlbum()} className="buy-button">
           Buy Now!
         </button>
       </div>

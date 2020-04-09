@@ -4,7 +4,7 @@ import './style.css'
 const About = (props) => {
   return (
     <div className="about">
-      <div class="half">
+      <div className="half">
         <h2>ABOUT US</h2>
         <ul>
           <li>We are the best</li>
